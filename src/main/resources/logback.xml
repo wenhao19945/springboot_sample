@@ -34,7 +34,7 @@
   <logger name="org.springframework.web" level="ERROR"/>
   <logger name="org.apache.tomcat" level="ERROR"/>
   <logger name="com.framework" level="DEBUG"/>
-  <logger name="com.sutpc.its" level="DEBUG"/>
+  <logger name="com.example.its" level="DEBUG"/>
   <!-- * 通配符 设置log打印级别 对所有类有效TRACE, DEBUG, INFO, WARN, ERROR, ALL 和 OFF-->
   <root level="INFO">
     <appender-ref ref="CONSOLE"/>
