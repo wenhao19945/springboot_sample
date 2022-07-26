@@ -1,0 +1,78 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: spbdemo # 项目名
+
+  profiles:
+    active: dev
+  datasource:
+    name: common-test
+    # 公共测试库
+    url: jdbc:postgresql://127.0.0.1:5432/common_test
+    username: postgres
+    password: postgres
+    # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.postgresql.Driver
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+
+  redis:
+    database: 7
+    host: 127.0.0.1
+    port: 6379
+    password: 12345
+    lettuce:
+      pool:
+        max-active: 500
+        max-wait: 500
+        max-idle: 500
+        min-idle: 0
+    timeout: 5000
+
+  #spring.mvc.static-path-pattern=/static/**
+  #关闭thymeleaf的缓存，不然在开发过程中修改页面不会立刻生效需要重启，生产可配置为true
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8
+    content-type: text/html
+  resources:
+    chain:
+      strategy:
+        content:
+          enabled: true
+          paths: /**
+
+# sql日志输出
+logging:
+  level:
+    com.sutpc.its.dao: DEBUG
+
+# mybatis 配置
+mybatis:
+  mapper-locations: classpath*:/mapper/*.xml
+  # MapperXml中实体类别名
+  type-aliases-package: com.sutpc.its.bean
+
+# 自定义配置
+com:
+  sutpc:
+    url:
+      base: https://market.aliyun.com/products/57096001/cmapi012362.html
+      aliyun: ${com.sutpc.url.base}?spm=5176.2020520132.101.4.aa8qWG#sku=yuncode636200004?wd=

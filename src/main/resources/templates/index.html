@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>websocketDemo</title>
+</head>
+<body>
+Welcome<br/>
+
+request <br/>
+<textarea style="width: 200px; height: 100px" id="method"> </textarea></br>
+<button onclick="sendClick()">发送命令</button>
+
+<button type="button" onclick="openClick();">重新连接</button>
+<button type="button" onclick="closeClick();">关闭</button><br/>
+
+<div id="message"></div>
+
+<script type="text/javascript">
+
+    var map = {};
+    var method = "";
+    var params = "";
+    var socket;
+    var t;
+    var MAX = 1000;
+    var count = 0;
+
+    var url = 'ws://localhost:8080/wsHandler/demo';
+
+    //判断当前浏览器是否支持WebSocket
+    if('WebSocket' in window){
+        socket = new WebSocket(url);
+    }else{
+        alert('Not support websocket');
+    }
+
+    //连接发生错误的回调方法
+    socket.onerror = function(){
+        setMessageInnerHTML("error");
+    };
+    //连接成功建立的回调方法
+    socket.onopen = function(event){
+        setMessageInnerHTML("open");
+    };
+
+    //接收到消息的回调方法
+    socket.onmessage = function(){
+        setMessageInnerHTML("---------- start -------------");
+        setMessageInnerHTML(event.data);
+        setMessageInnerHTML("----------  end  -------------");
+    };
+
+    function openClick() {
+        setMessageInnerHTML("open");
+        connection();
+    }
+
+    function closeClick() {
+        setMessageInnerHTML("close");
+        socket.close();
+    }
+
+    //发送消息
+    function sendClick() {
+        method = document.getElementById('method').value;
+        socket.send(method);
+    }
+
+    // 开启连接
+    var onopen = function() {
+        console.log("open...");
+    }
+
+    // 关闭连接
+    var onclose = function() {
+        console.log("close...");
+        reconnection();
+    }
+
+    // 接收消息
+    var onmessage = function(e) {
+        setMessageInnerHTML("---------- start -------------");
+        setMessageInnerHTML(e.data);
+        setMessageInnerHTML("----------  end  -------------");
+    }
+
+    // 异常返回
+    var onerror = function() {
+        console.log("error...");
+        reconnection();
+    }
+
+    //将消息显示在网页上
+    function setMessageInnerHTML(innerHTML){
+        document.getElementById('message').innerHTML += innerHTML + '<br/>';
+    }
+
+    var connection = function() {
+
+        socket = new WebSocket(url);
+        socket.onopen = onopen;
+        socket.onmessage = onmessage;
+        socket.onclose = onclose;
+        socket.onerror = onerror;
+    }
+
+
+    var reconnection = function() {
+        count = count + 1;
+        console.log("reconnection...【" + count + "】");
+        //1与服务器已经建立连接
+        if (count >= MAX || socket.readyState == 1) {
+            clearTimeout(t);
+        } else {
+            //2已经关闭了与服务器的连接
+            if (socket.readyState == 3) {
+                connection();
+            }
+            //0正尝试与服务器建立连接,2正在关闭与服务器的连接
+            t = setTimeout(function() {reconnection();}, 100);
+        }
+    }
+    
+    function reconnectWebSocket() {
+        reconnection();
+    }
+</script>
+</body>
+</html>
