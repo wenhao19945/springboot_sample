@@ -62,7 +62,7 @@ spring:
 # sql日志输出
 logging:
   level:
-    com.sutpc.its.dao: DEBUG
+    com.example.its.dao: DEBUG
 
 # mybatis 配置
 mybatis:
