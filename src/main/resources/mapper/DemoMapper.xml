@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.sutpc.its.dao.IDemoDao">
+<mapper namespace="com.example.its.dao.IDemoDao">
 
 	<select id="findObjectsByMap"  resultType="map" >
 		select * from t_demo_model
@@ -19,7 +19,7 @@
 		</where>
 	</select>
 
-	<select id="findObjects"  parameterType="com.sutpc.its.bean.model.DemoModel" resultType="com.sutpc.its.bean.vo.DemoVO">
+	<select id="findObjects"  parameterType="com.example.its.bean.model.DemoModel" resultType="com.example.its.bean.vo.DemoVO">
 		select id, name, mail from t_demo_model
 		<where>
 			<if test="id != null and id != ''">
@@ -34,7 +34,7 @@
 		</where>
 	</select>
 
-	<select id="findObject" resultType="com.sutpc.its.bean.vo.DemoVO">
+	<select id="findObject" resultType="com.example.its.bean.vo.DemoVO">
 		select id, name, mail from t_demo_model
 		<where>
 			<if test="id != null and id != ''">
@@ -46,11 +46,11 @@
 		</where>
 	</select>
 
-	<insert id="saveObject" parameterType="com.sutpc.its.bean.model.DemoModel">
+	<insert id="saveObject" parameterType="com.example.its.bean.model.DemoModel">
 		insert into t_demo_model(id,name,mail) values(#{sys_uuid},#{name},#{mail})
 	</insert>
 
-	<insert id="updateObject" parameterType="com.sutpc.its.bean.model.DemoModel">
+	<insert id="updateObject" parameterType="com.example.its.bean.model.DemoModel">
 		update t_demo_model set name=#{name},mail=#{mail} where id=#{id}
 	</insert>
 

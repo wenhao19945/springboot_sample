@@ -58,17 +58,17 @@
 > \service\DemoService.java
 
 ``` java
-@Value("${com.sutpc.url.aliyun}")
+@Value("${com.example.url.aliyun}")
 String aliyunUrl;
 ```
 
 > \resources\application.yml
 ```yaml
 com:
-  sutpc:
+  example:
     url:
-      base: https://market.aliyun.com/products/57096001/cmapi012362.html
-      aliyun: ${com.sutpc.url.base}?spm=5176.2020520132.101.4.aa8qWG#sku=yuncode636200004?wd=
+      base: https://market.aliyun.com/
+      aliyun: 
 ```
 
 > 配置 可以用${} 拼接 数据
@@ -101,7 +101,4 @@ com:
   kill PID
 ```
 
-
-# 待续
-<h3> 关于私服，请参见pom.xml，已设置为http://maven.sutpc.cc/repository/public/
 

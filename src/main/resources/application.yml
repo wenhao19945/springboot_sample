@@ -3,14 +3,14 @@ server:
 
 spring:
   application:
-    name: spbdemo # 项目名
+    name: demo1 # 项目名
 
   profiles:
     active: dev
   datasource:
     name: common-test
-    # 公共测试库
-    url: jdbc:postgresql://127.0.0.1:5432/common_test
+    # 测试库
+    url: jdbc:postgresql://127.0.0.1:5432/test
     username: postgres
     password: postgres
     # 使用druid数据源
@@ -68,11 +68,11 @@ logging:
 mybatis:
   mapper-locations: classpath*:/mapper/*.xml
   # MapperXml中实体类别名
-  type-aliases-package: com.sutpc.its.bean
+  type-aliases-package: com.example.its.bean
 
 # 自定义配置
 com:
-  sutpc:
+  example:
     url:
-      base: https://market.aliyun.com/products/57096001/cmapi012362.html
-      aliyun: ${com.sutpc.url.base}?spm=5176.2020520132.101.4.aa8qWG#sku=yuncode636200004?wd=
+      base:
+      aliyun:
