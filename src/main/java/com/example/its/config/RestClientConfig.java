@@ -8,7 +8,7 @@ import org.springframework.web.client.RestTemplate;
 
 /**
  * @ClassName: RestClientConfig
- * @Author: lixin
+ * @Author: karen
  * @Description: RestClient 配置类
  * @Date Created in 2020/12/24 14:17
  * @Modified By:

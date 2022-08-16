@@ -10,7 +10,7 @@ import org.springframework.http.converter.HttpMessageConverter;
 
 /**
  * @ClassName: JsonConfig
- * @Author: lixin
+ * @Author: karen
  * @Description: fastJson 配置类
  * @Date Created in 2020/12/24 14:17
  * @Modified By:

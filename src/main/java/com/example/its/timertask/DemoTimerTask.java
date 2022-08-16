@@ -22,7 +22,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * @ClassName: DemoTimerTask
- * @Author: lixin
+ * @Author: karen
  * @Description: 定时调度任务
  * @Date Created in 2020/12/24 14:36
  * @Modified By:

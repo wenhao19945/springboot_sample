@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @ClassName: IDemoDao
- * @Author: lixin
+ * @Author: karen
  * @Description: dao orm操作接口
  * @Date Created in 2020/12/24 14:17
  * @Modified By:

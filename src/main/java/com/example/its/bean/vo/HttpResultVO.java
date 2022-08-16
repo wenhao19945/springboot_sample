@@ -8,7 +8,7 @@ import lombok.ToString;
 
 /**
  * @ClassName: ControllerException
- * @Author: lixin
+ * @Author: karen
  * @Description: 接口统一返回结果
  * @Date Created in 2020/12/24 14:17
  * @Modified By:

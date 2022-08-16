@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * @ClassName: DemoWebsocket
- * @Author: lixin
+ * @Author: karen
  * @Description: websocket 服务端接收对象
  * @Date Created in 2020/12/24 14:36
  * @Modified By:

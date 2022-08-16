@@ -8,7 +8,7 @@ import lombok.ToString;
 
 /**
  * @ClassName: DemoVO
- * @Author: lixin
+ * @Author: karen
  * @Description:
  * @Date Created in 2020/12/24 14:33
  * @Modified By:

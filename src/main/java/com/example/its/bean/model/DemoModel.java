@@ -7,7 +7,7 @@ import lombok.ToString;
 
 /**
  * @ClassName: DemoModel
- * @Author: lixin
+ * @Author: karen
  * @Description: demo实体
  * @Date Created in 2020/12/24 14:17
  * @Modified By:

@@ -8,7 +8,7 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
 /**
  * @ClassName: AsyncConfiguration
- * @Author: lixin
+ * @Author: karen
  * @Description: 启用异步任务 配置类
  * @Date Created in 2020/12/1 10:48
  * @Modified By:

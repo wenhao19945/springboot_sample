@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * @ClassName: ControllerException
- * @Author: lixin
+ * @Author: karen
  * @Description: 统一异常处理类
  * @Date Created in 2020/12/24 14:17
  * @Modified By:

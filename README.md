@@ -24,7 +24,8 @@
 ### 1、 mybatis3
 ### 2、 swagger2在线文档
 > 启动后打开http://localhost:8080/swagger-ui.html#/
-### 3、 fastjson组件统一封装返回接口json
+### 3、 redis 
+> redisTemplate基本使用
 ### 4、 数据库（pgsql）
 > 注：Demo里的连接数据库为公共测试库
 ### 5、 数据库分页
@@ -54,7 +55,6 @@
 > 可参见https://blog.csdn.net/cowbin2012/article/details/85250855 或https://my.oschina.net/Mkeeper/blog/2054351
 
 ### 14、属性配置获取
-
 > \service\DemoService.java
 
 ``` java
